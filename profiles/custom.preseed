@@ -107,8 +107,8 @@ d-i netcfg/choose_interface select auto
 # Note that any hostname and domain names assigned from dhcp take
 # precidence over values set here. However, setting the values still
 # prevents the questions from being shown even if values come from dhcp.
-d-i netcfg/get_hostname string unassigned
-d-i netcfg/get_domain string unassigned
+d-i netcfg/get_hostname string machine
+d-i netcfg/get_domain string lab.internal
 
 # Disable that annoying WEP key dialog.
 d-i netcfg/wireless_wep string 
