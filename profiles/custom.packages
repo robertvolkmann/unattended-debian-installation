@@ -1,0 +1,5 @@
+# Install dbus, which is required when systemd is used:
+# https://bugs.debian.org/776530
+dbus
+
+frr

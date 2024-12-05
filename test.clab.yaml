@@ -1,0 +1,24 @@
+name: test
+
+topology:
+  nodes:
+    machine:
+      kind: linux
+      image: localhost/machine
+      network-mode: none
+    frr:
+      kind: linux
+      image: quay.io/frrouting/frr:10.1.1
+      network-mode: none
+      binds:
+        - files/daemons:/etc/frr/daemons
+        - files/frr.conf:/etc/frr/frr.conf
+        - files/vtysh.conf:/etc/frr/vtysh.conf
+    netshoot:
+      kind: linux
+      image: docker.io/nicolaka/netshoot
+      network-mode: container:frr
+      binds:
+        - files/id_ed25519:/root/.ssh/id_ed25519
+  links:
+    - endpoints: ["machine:eth0", "frr:eth0"]

@@ -1,0 +1,1 @@
+deb [signed-by=/etc/apt/keyrings/frr.gpg] https://deb-us.frrouting.org/frr bookworm frr-10.0
